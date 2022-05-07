@@ -1,0 +1,11 @@
+package com.farm.springdemo;
+
+public class TrackCoach implements Coach {
+
+	@Override
+	public String getDailyPractice() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
