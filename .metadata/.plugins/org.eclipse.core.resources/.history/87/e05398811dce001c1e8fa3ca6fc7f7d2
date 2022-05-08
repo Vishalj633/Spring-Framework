@@ -1,0 +1,16 @@
+package com.farm.springdemo;
+
+public class BaseballCoach implements Coach{
+	
+	@Override
+	public String getDailyPractice() {
+		return "Spend 30 minutes in batting practice";
+	}
+
+	@Override
+	public String getDailyFortune() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}

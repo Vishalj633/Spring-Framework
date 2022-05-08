@@ -1,0 +1,2 @@
+Singleton scope is default and best use case for it is state-less bean
+Prototype scope : new object is created for each request

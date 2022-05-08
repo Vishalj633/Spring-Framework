@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;spring-demo-one/src/com/farm/springdemo/Notes&apos; to &apos;Notes.txt&apos;" description="Rename resource &apos;Notes&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/com/farm/springdemo/Notes" name="Notes.txt" stamp="1652030200942" updateReferences="true"/>
+</session>

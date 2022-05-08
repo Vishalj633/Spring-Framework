@@ -6,4 +6,10 @@ public class SwimmingCoach implements Coach {
 	public String getDailyPractice() {
 		return "Complete 10 rounds of swimming pool daily";
 	}
+
+	@Override
+	public String getDailyFortune() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

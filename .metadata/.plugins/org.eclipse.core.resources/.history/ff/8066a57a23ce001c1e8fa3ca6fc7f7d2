@@ -1,0 +1,20 @@
+package com.farm.springdemo;
+
+public class CicketCoach implements Coach {
+
+	private HappyFortuneService fortuneService;
+	
+	// Create no-args constructor 
+	
+	
+	@Override
+	public String getDailyPractice() {
+		return "Do 2 hours bowling practice daily";
+	}
+
+	@Override
+	public String getDailyFortune() {
+		return "Good to go "+fortuneService.getFortune();
+	}
+
+}

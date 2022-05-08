@@ -8,10 +8,10 @@ public class MyApp {
 		// BaseballCoach theCoach = new BaseballCoach();
 		
 		// Create the object
-		Coach theCoach = new TrackCoach();
+		//Coach theCoach = new TrackCoach();
 		
 		// Use the object
-		System.out.println(theCoach.getDailyPractice());
+		//System.out.println(theCoach.getDailyPractice());
 	}
 
 }

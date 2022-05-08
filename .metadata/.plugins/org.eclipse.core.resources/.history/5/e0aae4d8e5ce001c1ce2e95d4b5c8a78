@@ -1,0 +1,32 @@
+package com.farm.springdemo;
+
+public class CricketCoach implements Coach {
+
+	private HappyFortuneService fortuneService;
+	
+	// Add new private fields for email and team	
+	public String emailAddress;
+	public String team;
+	
+	// Create no-args constructor 
+	CricketCoach(){
+		System.out.println("CricketCoach: Inside no-args construtor");
+	}
+	
+	// Create setter method
+	public void setFortuneService(HappyFortuneService fortuneService) {
+		System.out.println("CricketCoach: Inside setter method - setFortuneService");
+		this.fortuneService = fortuneService;
+	}
+	
+	@Override
+	public String getDailyPractice() {
+		return "Do 2 hours bowling practice daily";
+	}
+
+	@Override
+	public String getDailyFortune() {
+		return "Good to go "+fortuneService.getFortune();
+	}
+
+}
