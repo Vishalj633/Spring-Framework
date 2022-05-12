@@ -1,8 +1,9 @@
 package com.app.springdemo;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class AnnotationDemoApp {
+public class JavaConfigDemoApp {
 
 	public static void main(String[] args) {
 		
@@ -10,8 +11,8 @@ public class AnnotationDemoApp {
 		// Choose any injection style (1. Constructor injection 2. Setter injection 3. Field injection => in spring document mentioned => get the same functionality from these 3 injection techniques) and stay consistant with throghout the project 
 		
 		// Read spring config file
-		ClassPathXmlApplicationContext context = new 
-				ClassPathXmlApplicationContext("applicationContext.xml");
+		AnnotationConfigApplicationContext context = new 
+				AnnotationConfigApplicationContext(SportConfig.class);
 		
 		// Get the bean from the spring container
 		//Coach theCoach = context.getBean("thatGoodCoach", Coach.class);   Explicit Bean Id
