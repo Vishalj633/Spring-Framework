@@ -40,4 +40,11 @@
     <fullyQualifiedTypeName name="javax.validation.Payload"/>
     <fullyQualifiedTypeName name="javax.validation.ConstraintValidator"/>
     <fullyQualifiedTypeName name="com.luv2code.springdemo.mvc.validation.CourseCode"/>
+    <fullyQualifiedTypeName name="java.sql.DriverManager"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="javax.persistence.Entity"/>
+    <fullyQualifiedTypeName name="javax.persistence.Table"/>
+    <fullyQualifiedTypeName name="org.hibernate.SessionFactory"/>
+    <fullyQualifiedTypeName name="org.hibernate.cfg.Configuration"/>
+    <fullyQualifiedTypeName name="org.hibernate.Session"/>
 </qualifiedTypeNameHistroy>
