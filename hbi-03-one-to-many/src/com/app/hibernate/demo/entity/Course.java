@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -27,27 +28,22 @@ public class Course {
 	@Column(name="id")
 	private int id;
 	
-	@Column(name="first_name")
-	private String firstName;
+	@Column(name="title")
+	private String title;
+
 	
-	@Column(name="last_name")
-	private String lastName;
-	
-	@Column(name="email")
-	private String email;
-	
-	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="instructor_detail_id")
-	private InstructorDetail instructordetail;
+	@ManyToOne(cascade= 
+		{CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST,
+				CascadeType.REFRESH})
+	@JoinColumn(name="instructor_id")
+	private Instructor instructor;
 
 	public Course() {
 	}
 
-	public Course(String firstName, String lastName, String email) {
+	public Course(String title) {
 		super();
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.email = email;
+		this.title = title;
 	}
 
 	public int getId() {
@@ -58,42 +54,25 @@ public class Course {
 		this.id = id;
 	}
 
-	public String getFirstName() {
-		return firstName;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
-	public String getLastName() {
-		return lastName;
+	public Instructor getInstructor() {
+		return instructor;
 	}
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public InstructorDetail getInstructordetail() {
-		return instructordetail;
-	}
-
-	public void setInstructordetail(InstructorDetail instructordetail) {
-		this.instructordetail = instructordetail;
+	public void setInstructor(Instructor instructor) {
+		this.instructor = instructor;
 	}
 
 	@Override
 	public String toString() {
-		return "Instructor [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
-				+ ", instructordetail=" + instructordetail + "]";
+		return "Course [id=" + id + ", title=" + title + ", instructor=" + instructor + "]";
 	}
-	
+
 }
