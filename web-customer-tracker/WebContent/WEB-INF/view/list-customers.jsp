@@ -1,16 +1,19 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
+<!DOCTYPE html>
+<html>
+<head>
+
 <!-- Reference our style sheet -->
 
 <link type="text/css"
 	  rel="styleSheet"
-	  href="${pageContext.request.contextPath/resources/css/style.css}"/>
+	  href="${pageContext.request.contextPath}/resources/css/style.css"/>
 
-<!DOCTYPE html>
-<html>
-<head>
 <title>List of customer</title>
+
 </head>
+
 <body>
 
 	<div id="wrapper">
@@ -21,6 +24,12 @@
 	
 	<div id="container">
 		<div id="content">
+			
+			<!-- Put new button to add new customer -->
+			
+			<input type="button" value="Add Customer"
+				onclick="window.location.href='showFormForAdd'; return false;"
+				class="add-button"/>
 			
 			<!-- Add html table -->
 			
