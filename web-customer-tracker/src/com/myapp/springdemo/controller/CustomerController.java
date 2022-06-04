@@ -5,9 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.myapp.springdemo.entity.Customer;
 import com.myapp.springdemo.service.CustomerService;
@@ -62,4 +64,17 @@ public class CustomerController {
 		return "redirect:/customer/list";
 	}
 
+	@GetMapping("/showFormForUpdate")
+	public String showFormForUpdate(@RequestParam("customerId")int theId, Model theModel) {
+		
+		// Get the customer form our service
+		Customer theCustomer = customerService.getCustomer(theId);
+		
+		// Set customer as model attribute to pre-populate the form
+		theModel.addAttribute("customer",theCustomer);
+				
+		// Send over to our form
+		
+		return null;
+	}
 }
