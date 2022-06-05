@@ -2,6 +2,7 @@ package com.myapp.aopdemo;
 
 public class Account {
 	
+	// New variables
 	private String name;
 	private String level;
 	public String getName() {
