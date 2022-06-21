@@ -28,7 +28,7 @@
 	</p>
 	<hr>
 
-
+	<security:authorize access="hasRole('MANAGER')">
 	<!-- Add a link to point to /leaders ... this is for the managers -->
 	
 	<p>
@@ -37,7 +37,9 @@
 		(Only for managers peeps)
 		
 	</p>
-	
+	</security:authorize>
+
+	<security:authorize access="hasRole('ADMIN')">
 	<!-- Add a link to point to /system ... this is for the admins -->
 	
 	<p>
@@ -46,6 +48,7 @@
 		(Only for admin peeps)
 		
 	</p>
+	</security:authorize>
 	
 	<!-- Add logout button -->
 	<form:form action="${pageContext.request.contextPath}/logout" method="POST">
