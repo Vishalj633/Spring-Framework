@@ -1,28 +1,28 @@
 package com.myapp.springsecurity.demo.config;
 
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.User.UserBuilder;
 
 @Configuration
 @EnableWebSecurity
 public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
 
+	// Add a reference to our security data source 
+	@Autowired
+	private DataSource securityDataSource;
+	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+
+		// Use JDBC authentication
+		auth.jdbcAuthentication().dataSource(securityDataSource);
 		
-		// Add our user for in memory authentication
-		
-		UserBuilder users = User.withDefaultPasswordEncoder();
-		
-		auth.inMemoryAuthentication()
-		.withUser(users.username("vishal").password("emp123").roles("EMPLOYEE"))
-		.withUser(users.username("jimmy").password("man123").roles("EMPLOYEE","MANAGER"))
-		.withUser(users.username("ram").password("adm123").roles("EMPLOYEE","ADMIN"));
 	}
 
 	
