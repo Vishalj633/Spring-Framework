@@ -54,22 +54,7 @@ public class StudnetRestController {
 		return theStudents.get(studentId);
 	}
 	
-	// Add an Exception handler using @ExceptionHandler
-	@ExceptionHandler
-	public ResponseEntity<StudentErrorResponse> handleException(StudnetNotFoundException exp){
-		
-		// Create a StudentErrorResonse
-		StudentErrorResponse error = new StudentErrorResponse();
-		
-		error.setStatus(HttpStatus.NOT_FOUND.value());
-		error.setMessage(exp.getMessage());
-		error.setTimeStamp(System.currentTimeMillis());
-		
-		// return ResponceEntity
-		
-		return new ResponseEntity<>(error,HttpStatus.NOT_FOUND);
-		
-	}
+
 	
 }
 
