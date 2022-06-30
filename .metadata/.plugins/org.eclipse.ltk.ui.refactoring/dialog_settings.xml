@@ -6,4 +6,9 @@
 	</section>
 	<section name="org.eclipse.ltk.ui.refactoring.settings">
 	</section>
+	<section name="ExtractTempWizard">
+		<item key="declareFinal" value="false"/>
+		<item key="declarevariableTypeVar" value="false"/>
+		<item key="replaceOccurrences" value="true"/>
+	</section>
 </section>
